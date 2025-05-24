@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="737.0" prefWidth="793.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.KargoEkraniController">
+   <children>
+      <Pane fx:id="Panepan" prefHeight="747.0" prefWidth="793.0">
+         <children>
+            <Label layoutX="274.0" prefHeight="28.0" prefWidth="245.0" text="Kargo Paneline Hoşgeldiniz">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="335.0" layoutY="180.0" prefHeight="21.0" prefWidth="117.0" text="Kargo Takip No" textFill="#ffe100">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="takipNoLabel" layoutX="39.0" layoutY="209.0" prefHeight="25.0" prefWidth="106.0" />
+            <TextField fx:id="takipNo_tf" layoutX="331.0" layoutY="209.0" prefHeight="37.0" prefWidth="123.0" />
+            <Button fx:id="yenikargoEkleButton" layoutX="702.0" layoutY="381.0" mnemonicParsing="false" onAction="#yenikargoEkleButton_click" prefHeight="37.0" prefWidth="78.0" text="kargo ekle" />
+            <ImageView fx:id="KargoResmiView" fitHeight="151.0" fitWidth="209.0" layoutX="576.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="kargoResmiButton" layoutX="498.0" layoutY="63.0" mnemonicParsing="false" onAction="#kargoResmi_click" prefHeight="44.0" prefWidth="71.0" text="resim ekle" />
+            <TableView fx:id="TableKargoPanel" layoutY="465.0" onMouseClicked="#TableKargoPanel_click" prefHeight="271.0" prefWidth="793.0">
+              <columns>
+                <TableColumn fx:id="clm_TakipNo" prefWidth="106.0" text="takipNo" />
+                <TableColumn fx:id="clm_gonderici" prefWidth="100.0" text="gonderici " />
+                  <TableColumn fx:id="clm_alici" prefWidth="103.0" text="alici" />
+                  <TableColumn fx:id="clm_adres" prefWidth="223.0" text="adres" />
+                  <TableColumn fx:id="clm_kargotipi" prefWidth="90.0" text="kargoTipi" />
+                  <TableColumn fx:id="clm_tasimaturu" prefWidth="83.0" text="tasimaTuru" />
+                  <TableColumn fx:id="clm_durum" prefWidth="87.0" text="durum" />
+              </columns>
+            </TableView>
+            <Label layoutX="489.0" layoutY="205.0" text="Gonderici" textFill="#ffe100">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <Label layoutX="492.0" layoutY="238.0" text="Alici" textFill="#ffe100">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <Label layoutX="492.0" layoutY="276.0" text="Adres" textFill="#ffe100">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <Label layoutX="489.0" layoutY="309.0" text="KargoTipi" textFill="#ffe100">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <Label layoutX="492.0" layoutY="343.0" text="TasimaTuru" textFill="#ffe100">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <TextField fx:id="gonderici_tf" layoutX="583.0" layoutY="201.0" prefHeight="25.0" prefWidth="196.0" />
+            <TextField fx:id="alici_tf" layoutX="583.0" layoutY="234.0" prefHeight="25.0" prefWidth="196.0" />
+            <TextField fx:id="adres_tf" layoutX="584.0" layoutY="272.0" prefHeight="25.0" prefWidth="196.0" />
+            <TextField fx:id="kargotipi_tf" layoutX="584.0" layoutY="305.0" prefHeight="25.0" prefWidth="196.0">
+               <contextMenu>
+                  <ContextMenu fx:id="kargotipi">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </TextField>
+            <TextField fx:id="tasimaturu_tf" layoutX="584.0" layoutY="339.0" prefHeight="25.0" prefWidth="196.0">
+               <contextMenu>
+                  <ContextMenu fx:id="tasimaturu">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </TextField>
+            <Button fx:id="anaSayfaButton" layoutX="429.0" layoutY="381.0" mnemonicParsing="false" onAction="#anaSayfaButton_click" prefHeight="37.0" prefWidth="78.0" text="Ana Sayfa" />
+            <Label layoutX="489.0" layoutY="169.0" text="Durum" textFill="#ffe100">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <TextField fx:id="Durum_tf" layoutX="583.0" layoutY="165.0" prefHeight="25.0" prefWidth="196.0" />
+            <Button fx:id="DuzenleButton" layoutX="612.0" layoutY="382.0" mnemonicParsing="false" onAction="#DuzenleButton_click" prefHeight="37.0" prefWidth="78.0" text="Düzenle" />
+            <Button fx:id="DeleteButton" layoutX="522.0" layoutY="382.0" mnemonicParsing="false" onAction="#DeleteButton_click" prefHeight="37.0" prefWidth="78.0" text="Sil" />
+            <Button fx:id="searchButton" layoutX="701.0" layoutY="436.0" mnemonicParsing="false" onAction="#searchButton_click" prefHeight="25.0" prefWidth="78.0" text="Ara" />
+            <TextField fx:id="Search_tf" layoutX="538.0" layoutY="436.0" />
+         </children>
+      </Pane>
+   </children>
+</VBox>
